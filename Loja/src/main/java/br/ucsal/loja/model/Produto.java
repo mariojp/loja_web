@@ -21,6 +21,11 @@ public class Produto {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public Produto() {
+		
+	}
+
 
 	public Long getId() {
 		return id;
