@@ -11,6 +11,15 @@
   </welcome-file-list>
   <servlet>
     <description></description>
+
+    <display-name>AdicionarProdutoServlet</display-name>
+    <servlet-name>AdicionarProdutoServlet</servlet-name>
+    <servlet-class>br.ucsal.loja.controller.AdicionarProdutoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdicionarProdutoServlet</servlet-name>
+    <url-pattern>/AdicionarProdutoServlet</url-pattern>
+
     <display-name>AlterarProdutoServlet</display-name>
     <servlet-name>AlterarProdutoServlet</servlet-name>
     <servlet-class>br.ucsal.controller.AlterarProdutoServlet</servlet-class>
