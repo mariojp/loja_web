@@ -9,24 +9,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>ListarProduto</display-name>
-    <servlet-name>ListarProduto</servlet-name>
-    <servlet-class>br.ucsal.loja.servlet.ListarProduto</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListarProduto</servlet-name>
-    <url-pattern>/ListarProduto</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ListarProdutoServlet</display-name>
-    <servlet-name>ListarProdutoServlet</servlet-name>
-    <servlet-class>br.ucsal.loja.servlet.ListarProdutoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListarProdutoServlet</servlet-name>
-    <url-pattern>/ListarProdutoServlet</url-pattern>
-  </servlet-mapping>
 </web-app>

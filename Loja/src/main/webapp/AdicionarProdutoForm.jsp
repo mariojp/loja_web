@@ -8,19 +8,13 @@
 </head>
 <body>
 	<h1>FORMULARIO ADICIONAR PRODUTO</h1>
-	<form action="AdicionarProdutoServlet" method="get">
-  Nome:<br>
-  <input type="text" name="nome"><br>
-  Status:<br>
-  <input type="text" name="status"><br>
-  E-mail:<br>
-  <input type="text" name="email"><br>
-  Descrição:<br>
-  <input type="text" name="description"><br>
-  
-   <input type="submit" value="Submit"><br>
-  
-</form>
+	<form action="AdicionarProdutoServlet" method="post">
+		Nome:<br> <input type="text" name="nome"><br>
+		Status:<br> <input type="text" name="status"><br>
+		E-mail:<br> <input type="text" name="email"><br>
+		Descrição:<br> <input type="text" name="description"><br>
+		<input type="submit" value="Submit"><br>
+	</form>
 
 </body>
 </html>

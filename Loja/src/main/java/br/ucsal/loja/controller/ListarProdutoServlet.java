@@ -1,27 +1,32 @@
-package br.ucsal.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.busucsal.model.Itinerario;
+import br.ucsal.loja.dao.ProdutoDAO;
 import br.ucsal.loja.model.Produto;
 
 /**
- * Servlet implementation class AlterarProdutoServlet
+ * Servlet implementation class ListarProdutoServlet
  */
-public class AlterarProdutoServlet extends HttpServlet {
+
+@WebServlet("ListarProdutosServlet")
+public class ListarProdutoServlet  {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AlterarProdutoServlet() {
+    public ListarProdutoServlet() {
         super();
+        
         // TODO Auto-generated constructor stub
     }
 
@@ -29,21 +34,20 @@ public class AlterarProdutoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		ProdutoDAO dao =  new ProdutoDAO();
+		List<Produto> produtos  = dao.getLista();
+		request.setAttribute("produtos", produtos);
+		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("ListarProduto.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Produto produto = new Produto();
-		produto.setName("name");
-		produto.setEmail("email");
-		produto.setDescription("description");
-		produto.setStatus("status");
-		ProdutoDAO dao=new ProdutoDAO();
-		dao.alterar(produto);
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
+

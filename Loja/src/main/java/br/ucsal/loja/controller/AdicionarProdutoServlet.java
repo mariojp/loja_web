@@ -5,23 +5,15 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.loja.Dao.ProdutoDAO;
+import br.ucsal.loja.dao.ProdutoDAO;
 import br.ucsal.loja.model.Produto;
 
-public class AdicionarProdutoServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	public AdicionarProdutoServlet() {
-		super();
-	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	}
+@WebServlet("/AdicionarProdutoServlet")
+public class AdicionarProdutoServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -39,7 +31,7 @@ public class AdicionarProdutoServlet extends HttpServlet {
 		dao.inserir(produto);
 
 		List<Produto> lista = dao.getLista();
-		request.setAttribute("produto", lista);
+		request.setAttribute("produtos", lista);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("listarProduto.jsp");
 		requestDispatcher.forward(request, response);
 
