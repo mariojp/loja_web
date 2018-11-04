@@ -14,6 +14,7 @@ import org.hsqldb.server.ServerAcl.AclFormatException;
  * Application Lifecycle Listener implementation class HSQLBanco
  *
  */
+
 @WebListener
 public class HSQLBanco implements ServletContextListener {
 
@@ -48,7 +49,7 @@ public class HSQLBanco implements ServletContextListener {
             server.setProperties(p);
             server.start();
             
-        } catch (AclFormatException | IOException e) {
+        } catch (Exception e) {
         	System.out.println(e);
         }
     }

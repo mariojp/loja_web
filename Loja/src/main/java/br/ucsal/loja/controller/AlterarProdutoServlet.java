@@ -15,7 +15,7 @@ import br.ucsal.loja.model.Produto;
  * Servlet implementation class AlterarProdutoServlet
  */
 
-@WebServlet("AlterarProdutoServlet")
+@WebServlet("/AlterarProdutoServlet")
 public class AlterarProdutoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

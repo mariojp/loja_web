@@ -3,6 +3,7 @@ package br.ucsal.loja.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.jws.WebService;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,8 +18,8 @@ import br.ucsal.loja.model.Produto;
  * Servlet implementation class ListarProdutoServlet
  */
 
-@WebServlet("ListarProdutosServlet")
-public class ListarProdutoServlet  {
+@WebServlet("/ListarProdutosServlet")
+public class ListarProdutoServlet  extends HttpServlet{
 	private static final long serialVersionUID = 1L;
        
     /**

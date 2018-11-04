@@ -10,7 +10,6 @@
 <form action="AlterarProduto" method="get">
 Digite o id do produto: <br /> 
 	<input type="text" name="id"> 
-	</p>    
 	<p> 
 	<input type="submit" name="BTEnvia" value="Buscar"> 
 	</p>
