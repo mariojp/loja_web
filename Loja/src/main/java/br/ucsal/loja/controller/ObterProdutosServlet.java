@@ -18,6 +18,7 @@ public class ObterProdutosServlet extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ProdutoDAO dao = new ProdutoDAO(); 
 		Long id = Long.parseLong(request.getParameter("id"));
 		Produto produto = dao.obter(id) ;
