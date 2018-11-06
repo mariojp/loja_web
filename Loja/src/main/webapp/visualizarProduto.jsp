@@ -8,18 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-  
-            <ul>
-             <li>${produto.id}</li>
-             <li>${produto.name}</li>
-             <li>${produto.status}</li>
-             <li>${produto.description}</li>
-             <li>${produto.email}</li>
-            </ul>
-       
-         
-       
-   
- 
+    <ul>
+     <li>${produto.name}</li>
+     <li>${produto.status}</li>
+     <li>${produto.description}</li>
+     <li>${produto.email}</li>
+    </ul>
  </body>
 </html>
