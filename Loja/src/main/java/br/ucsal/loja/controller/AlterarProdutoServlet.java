@@ -36,15 +36,22 @@ public class AlterarProdutoServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @author Ronaldo Matheus e Getúlio Ferreira
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Long id=Long.parseLong(request.getParameter("id"));
+		String nome=request.getParameter("nome");
+		String email=request.getParameter("email");
+		String status=request.getParameter("status");
 		Produto produto = new Produto();
-		produto.setName("name");
+		produto.setName(nome);
+		produto.setId(id);
 		produto.setEmail("email");
 		produto.setDescription("description");
 		produto.setStatus("status");
 		ProdutoDAO dao=new ProdutoDAO();
 		dao.altera(produto);
+		response.sendRedirect("/ListarProdutoServlet");
 		
 	}
 

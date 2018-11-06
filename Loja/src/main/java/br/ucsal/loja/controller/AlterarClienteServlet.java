@@ -12,6 +12,7 @@ import br.ucsal.loja.model.Cliente;
 
 /**
  * Servlet implementation class AlterarClienteServlet
+ * @Ronaldo Matheus e Getúlio Ferreira
  */
 @WebServlet("/AlterarClienteServlet")
 public class AlterarClienteServlet extends HttpServlet {
