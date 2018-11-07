@@ -2,6 +2,7 @@ package br.ucsal.loja.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,8 +31,10 @@ public class AlterarProdutoServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/AlterarProduto.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 	/**
@@ -46,6 +49,8 @@ public class AlterarProdutoServlet extends HttpServlet {
 		ProdutoDAO dao=new ProdutoDAO();
 		dao.altera(produto);
 		
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ListarProdutoServlet");
+		requestDispatcher.forward(request, response);
 	}
 
 }

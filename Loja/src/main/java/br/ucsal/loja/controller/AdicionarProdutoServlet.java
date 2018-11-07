@@ -36,15 +36,17 @@ public class AdicionarProdutoServlet extends HttpServlet{
 		ProdutoDAO dao = new ProdutoDAO();
 		dao.inserir(produto);
 
-		List<Produto> lista = dao.getLista();
-		request.setAttribute("produtos", lista);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListarProduto.jsp");
+		//List<Produto> lista = dao.getLista();
+		//request.setAttribute("produtos", lista);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ListarProdutoServlet");
 		requestDispatcher.forward(request, response);
 
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/AdicionarProduto.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 }
