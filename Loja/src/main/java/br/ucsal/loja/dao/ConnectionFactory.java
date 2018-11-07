@@ -26,6 +26,11 @@ public class ConnectionFactory {
 					"  NAME VARCHAR(255), STATUS VARCHAR(255), EMAIL VARCHAR(255), DESCRIPTION VARCHAR(255) " + 
 					");");
 			
+			connection.createStatement().execute("CREATE TABLE IF NOT EXISTS CLIENTE  ( " + 
+					"  ID BIGINT IDENTITY PRIMARY KEY," + 
+					"  CPF VARCHAR(11), NOME VARCHAR(255), LOGRADOURO VARCHAR(255), NUMERO INT, BAIRRO VARCHAR(255), CIDADE VARCHAR(255),  ESTADO VARCHAR(255) " + 
+					");");
+			
 		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
