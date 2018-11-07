@@ -13,7 +13,7 @@ import br.ucsal.loja.model.Cliente;
 /**
  * @autor1 Caio Júlio César de Jesus D'Almeida caio.dalmeida@ucsal.edu.br
  * @autor2 Luiz Alberto Pereira Borges Junior luiz.junior@ucsal.edu.br
- *@author Jean Lima de Souza Junior  jeanl.junior@ucsal.edu.br
+ * @author Jean Lima de Souza Junior jeanl.junior@ucsal.edu.br
  */
 public class ClienteDAO {
 
@@ -23,21 +23,20 @@ public class ClienteDAO {
 		this.conexao = ConnectionFactory.getConnection();
 	}
 
-	public List<Cliente> listar() {
+	public List<Cliente> getLista() {
 		Statement stmt;
 		List<Cliente> clientes = new ArrayList<>();
 		try {
 			stmt = ConnectionFactory.getConnection().createStatement();
-			ResultSet rs = stmt
-					.executeQuery("select id,nome,cpf,logradouro,numero,bairro,cidade,estado from cliente;");
+			ResultSet rs = stmt.executeQuery("select id,name,cpf,logradouro,numero,bairro,cidade,estado from cliente;");
 			while (rs.next()) {
 				Cliente c = new Cliente();
 
 				c.setId(rs.getLong("id"));
-				c.setName(rs.getString("nome"));
+				c.setName(rs.getString("name"));
 				c.setCpf(rs.getString("Cpf"));
 				c.setLogradouro(rs.getString("logradouro"));
-				c.setNumero(rs.getString("numero"));
+				c.setNumero(rs.getInt("numero"));
 				c.setBairro(rs.getString("bairro"));
 				c.setCidade(rs.getString("cidade"));
 				c.setEstado(rs.getString("estado"));
@@ -56,12 +55,12 @@ public class ClienteDAO {
 		try {
 
 			PreparedStatement ps = ConnectionFactory.getConnection().prepareStatement(
-					"insert into cliente (id,nome,cpf,logradouro,numero,bairro,cidade,estado) values (?,?,?,?,?,?,?,?);");
+					"insert into cliente (name,cpf,logradouro,numero,bairro,cidade,estado) values (?,?,?,?,?,?,?);");
 
 			ps.setString(1, cliente.getName());
 			ps.setString(2, cliente.getCpf());
 			ps.setString(3, cliente.getLogradouro());
-			ps.setString(4, cliente.getNumero());
+			ps.setInt(4, cliente.getNumero());
 			ps.setString(5, cliente.getBairro());
 			ps.setString(6, cliente.getCidade());
 			ps.setString(7, cliente.getEstado());
@@ -91,11 +90,11 @@ public class ClienteDAO {
 		try {
 
 			PreparedStatement ps = ConnectionFactory.getConnection().prepareStatement(
-					"update Cliente set nome=?,cpf=?,logradouro=?,numero=?,bairro=?,cidade=?,estado=? where id =?;");
+					"update Cliente set name=?,cpf=?,logradouro=?,numero=?,bairro=?,cidade=?,estado=? where id =?;");
 			ps.setString(1, cliente.getName());
 			ps.setString(2, cliente.getCpf());
 			ps.setString(3, cliente.getLogradouro());
-			ps.setString(4, cliente.getNumero());
+			ps.setInt(4, cliente.getNumero());
 			ps.setString(5, cliente.getBairro());
 			ps.setString(6, cliente.getCidade());
 			ps.setString(7, cliente.getEstado());

@@ -3,6 +3,8 @@ package br.ucsal.loja.model;
 /**
  * @autor1 Caio Júlio César de Jesus D'Almeida caio.dalmeida@ucsal.edu.br
  * @autor2 Luiz Alberto Pereira Borges Junior luiz.junior@ucsal.edu.br
+   * @author Jean Lima de Souza Junior jeanl.junior@ucsal.edu.br
+
  */
 public class Cliente {
 
@@ -10,7 +12,7 @@ public class Cliente {
 	private String name;
 	private String cpf;
 	private String logradouro;
-	private String numero;
+	private Integer numero;
 	private String bairro;
 	private String cidade;
 	private String estado;
@@ -19,7 +21,7 @@ public class Cliente {
 		super();
 	}
 
-	public Cliente(Long id, String name, String cpf, String logradouro, String numero, String bairro, String cidade,
+	public Cliente(Long id, String name, String cpf, String logradouro, Integer numero, String bairro, String cidade,
 			String estado) {
 		super();
 		this.id = id;
@@ -70,11 +72,11 @@ public class Cliente {
 		this.logradouro = logradouro;
 	}
 
-	public String getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
 

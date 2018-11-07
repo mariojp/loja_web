@@ -11,21 +11,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.ucsal.loja.dao.ClienteDAO;
 import br.ucsal.loja.dao.ProdutoDAO;
+import br.ucsal.loja.model.Cliente;
 import br.ucsal.loja.model.Produto;
 
 /**
  * Servlet implementation class ListarProdutoServlet
  */
 
-@WebServlet("/ListarProdutosServlet")
-public class ListarProdutoServlet extends HttpServlet {
+@WebServlet("/ListarClienteServlet")
+public class ListarClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ListarProdutoServlet() {
+	public ListarClienteServlet() {
 		super();
 
 		// TODO Auto-generated constructor stub
@@ -37,10 +39,10 @@ public class ListarProdutoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ProdutoDAO dao = new ProdutoDAO();
-		List<Produto> produtos = dao.getLista();
-		request.setAttribute("produtos", produtos);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListarProduto.jsp");
+		ClienteDAO dao = new ClienteDAO();
+		List<Cliente> clientes = dao.getLista();
+		request.setAttribute("clientes", clientes);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListarCliente.jsp");
 		requestDispatcher.forward(request, response);
 	}
 
