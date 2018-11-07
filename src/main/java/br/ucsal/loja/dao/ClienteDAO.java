@@ -13,6 +13,7 @@ import br.ucsal.loja.model.Cliente;
 /**
  * @autor1 Caio Júlio César de Jesus D'Almeida caio.dalmeida@ucsal.edu.br
  * @autor2 Luiz Alberto Pereira Borges Junior luiz.junior@ucsal.edu.br
+ *@author Jean Lima de Souza Junior  jeanl.junior@ucsal.edu.br
  */
 public class ClienteDAO {
 
