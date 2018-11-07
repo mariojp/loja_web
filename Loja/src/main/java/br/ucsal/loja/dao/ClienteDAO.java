@@ -19,7 +19,7 @@ public class ClienteDAO {
 	}
 
 	public void adicionarCliente(Cliente cliente) {
-		String sql = "insert into produto (cpf, nome, logradouro , numero , bairro , cidade , estado) values (?,?,?,?,?,?,?)";
+		String sql = "insert into cliente (cpf, nome, logradouro , numero , bairro , cidade , estado) values (?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, cliente.getCpf());

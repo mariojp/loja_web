@@ -35,14 +35,13 @@ public class ListarClienteServlet extends HttpServlet {
 	ClienteDAO dao =  new ClienteDAO();
 		List<Cliente> clientes  = dao.getLista();
 		request.setAttribute("clientes", clientes);
-		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("ListarClientes.jsp");
+		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("ListarCliente.jsp");
 		requestDispatcher.forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
