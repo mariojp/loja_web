@@ -1,9 +1,9 @@
-package br.ucsal.loja.model;
+package src.main.java.br.ucsal.loja.model;
 
 /**
- * @autor1 Caio Júlio César de Jesus D'Almeida caio.dalmeida@ucsal.edu.br
- * @autor2 Luiz Alberto Pereira Borges Junior luiz.junior@ucsal.edu.br
- */
+ *@autor1 Caio Júlio César de Jesus D'Almeida caio.dalmeida@ucsal.edu.br
+ *@autor2 Luiz Alberto Pereira Borges Junior luiz.junior@ucsal.edu.br
+*/
 public class Cliente {
 
 	private Long id;
