@@ -10,8 +10,8 @@
 </head>
 <body>
 Vitrine
-
-
+<a href="AdicionarProdutoForm.jsp">Adicionar produto</a>
+<a href="AdicionarClienteForm.jsp">Adicionar cliente</a>
 
 </body>
 </html>

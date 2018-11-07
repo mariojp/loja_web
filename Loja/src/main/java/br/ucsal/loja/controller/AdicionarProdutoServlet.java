@@ -23,6 +23,7 @@ public class AdicionarProdutoServlet extends HttpServlet{
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String nome = request.getParameter("nome");
 		String status = request.getParameter("status");
 		String email = request.getParameter("email");
