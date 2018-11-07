@@ -1,18 +1,19 @@
 package br.ucsal.loja.model;
 
 public class Cliente {
-	private Integer id;
+	private int id;
 	private String cpf;
 	private String nome;
 	private String logradouro;
-	private Integer numero;
+	private int numero;
 	private String bairro;
 	private String cidade;
+	private String estado;
 	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getCpf() {
@@ -33,10 +34,10 @@ public class Cliente {
 	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
-	public Integer getNumero() {
+	public int getNumero() {
 		return numero;
 	}
-	public void setNumero(Integer numero) {
+	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 	public String getBairro() {
@@ -57,7 +58,6 @@ public class Cliente {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	private String estado;
 	
 
 }

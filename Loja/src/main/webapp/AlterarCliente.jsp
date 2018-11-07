@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Alterar Cliente</title>
 </head>
 <body>
 <h1>Alterar cliente</h1>
-	<form action="AdicionarClienteServlet" method="post">
-		Id:<br><input type="text" name="Id"><br>
+	<form action="AlterarClienteServlet" method="post">
+		Id:<br><input type="text" name="id"><br>
 		Cpf:<br><input type="text" name="cpf"><br>
 		Nome:<br><input type="text" name="nome"><br>
 		Logradouro:<br><input type="text" name="logradouro"><br>

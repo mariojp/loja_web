@@ -19,9 +19,9 @@ public class ClienteDAO {
 
 	public void inserir(Cliente cliente) {
 		String sql = "insert into cliente (cpf, nome, logradouro, numero, bairro, cidade, estado) values (?, ?, ?, ?, ?, ?, ?)";
-		PreparedStatement stmt;
+		
 		try {
-			stmt = connection.prepareStatement(sql);
+			PreparedStatement stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, cliente.getCpf());
 			stmt.setString(2, cliente.getNome());
 			stmt.setString(3, cliente.getLogradouro());
@@ -53,6 +53,7 @@ public class ClienteDAO {
 				cliente.setBairro(rs.getString("bairro"));
 				cliente.setCidade(rs.getString("cidade"));
 				cliente.setEstado(rs.getString("estado"));
+				clientes.add(cliente);
 			}
 			rs.close();
 			stmt.close();
@@ -76,7 +77,7 @@ public class ClienteDAO {
 	}
 	
 	public void alterar(Cliente cliente) {
-		String  sql = "update cliente set cpf=? nome=? logradouro=? numero=? bairro=? cidade=? estado=? where id=?";
+		String  sql = "update cliente set cpf=?, nome=?, logradouro=?, numero=?, bairro=?, cidade=?, estado=? where id=?";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, cliente.getCpf());

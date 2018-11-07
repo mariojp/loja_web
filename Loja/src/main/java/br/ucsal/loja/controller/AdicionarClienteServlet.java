@@ -24,7 +24,7 @@ public class AdicionarClienteServlet extends HttpServlet {
 		String cpf = request.getParameter("cpf");
 		String nome = request.getParameter("nome");
 		String logradouro = request.getParameter("logradouro");
-		Integer numero = Integer.parseInt(request.getParameter("numero"));
+		int numero = Integer.parseInt(request.getParameter("numero"));
 		String bairro = request.getParameter("bairro");
 		String cidade = request.getParameter("cidade");
 		String estado = request.getParameter("estado");
@@ -40,10 +40,8 @@ public class AdicionarClienteServlet extends HttpServlet {
 		
 		ClienteDAO dao = new ClienteDAO();
 		dao.inserir(cliente);
-		List<Cliente> lista = dao.listar();
-		request.setAttribute("clientes", lista);
 		
-		doGet(request, response);
+		response.sendRedirect("ListarClientesServlet");
 	}
 
 }

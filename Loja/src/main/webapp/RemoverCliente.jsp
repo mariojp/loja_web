@@ -10,7 +10,7 @@
 	Selecionar id do cliente  a ser removido
 	<form action="RemoverClienteServlet">
 	ID:<input type="text" name="id">
-
+	<input type="submit" value="remover">
 	</form>
 </body>
 </html>

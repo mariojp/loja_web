@@ -17,9 +17,9 @@
 		</tr>
 		<c:forEach var="cliente" items="${clientes}">
 			<tr>
-				<td>${cliente.nome}</td>
-				<td>${cliente.cpf}</td>
-				<td>%{cliente.estado</td>
+				<th>${cliente.nome}</th>
+				<th>${cliente.cpf}</th>
+				<th>${cliente.estado}</th>
 			</tr>
 		</c:forEach>
 		

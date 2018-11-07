@@ -24,6 +24,7 @@ public class RemoverClientServlet extends HttpServlet {
 		cliente.setId(Integer.parseInt(request.getParameter("id")));
 		ClienteDAO dao = new ClienteDAO();
 		dao.remover(cliente);
+		response.sendRedirect("ListarClientesServlet");
 	}
 
 

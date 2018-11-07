@@ -21,7 +21,8 @@ public class AlterarClienteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		Cliente  cliente = new Cliente();
-		cliente.setId(Integer.parseInt((request.getParameter("nome")));
+		int id = Integer.parseInt(request.getParameter("id"));
+		cliente.setId(id);
 		cliente.setCpf(request.getParameter("cpf"));
 		cliente.setNome(request.getParameter("nome"));
 		cliente.setLogradouro(request.getParameter("logradouro"));
@@ -32,6 +33,8 @@ public class AlterarClienteServlet extends HttpServlet {
 		
 		ClienteDAO dao = new ClienteDAO();
 		dao.alterar(cliente);
+		
+		response.sendRedirect("ListarClientesServlet");
 		
 	}
 

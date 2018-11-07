@@ -37,10 +37,9 @@ public class AdicionarProdutoServlet extends HttpServlet{
 		ProdutoDAO dao = new ProdutoDAO();
 		dao.inserir(produto);
 
-		List<Produto> lista = dao.getLista();
-		request.setAttribute("produtos", lista);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListarProduto.jsp");
-		requestDispatcher.forward(request, response);
+
+		response.sendRedirect("ListarProdutosServlet");
+	
 
 	}
 	

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.ucsal.loja.dao.ClienteDAO;
 import br.ucsal.loja.model.Cliente;
 
 /**
@@ -31,9 +32,9 @@ public class ListarClientesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CliemyeDAO dao =  new Cliente DAO();
+		ClienteDAO dao =  new ClienteDAO();
 		List<Cliente> clientes  = dao.listar();
-		request.setAttribute("produtos", clientes);
+		request.setAttribute("clientes", clientes);
 		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("ListarCliente.jsp");
 		requestDispatcher.forward(request, response);
 	}
