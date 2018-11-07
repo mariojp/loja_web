@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Inserir Produto</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 	<h1>FORMULARIO ADICIONAR PRODUTO</h1>

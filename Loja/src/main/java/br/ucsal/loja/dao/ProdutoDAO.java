@@ -58,7 +58,7 @@ public class ProdutoDAO {
 	}
 
 	public void altera(Produto produto) {
-		String sql = "update dia set name=? status=? email=? description=? where id=?";
+		String sql = "update produto set name=? status=? email=? description=? where id=?";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, produto.getName());

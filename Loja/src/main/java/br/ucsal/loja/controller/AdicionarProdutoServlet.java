@@ -23,6 +23,7 @@ public class AdicionarProdutoServlet extends HttpServlet{
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String nome = request.getParameter("nome");
 		String status = request.getParameter("status");
 		String email = request.getParameter("email");
@@ -36,10 +37,9 @@ public class AdicionarProdutoServlet extends HttpServlet{
 		ProdutoDAO dao = new ProdutoDAO();
 		dao.inserir(produto);
 
-		List<Produto> lista = dao.getLista();
-		request.setAttribute("produtos", lista);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListarProduto.jsp");
-		requestDispatcher.forward(request, response);
+
+		response.sendRedirect("ListarProdutosServlet");
+	
 
 	}
 	
