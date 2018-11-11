@@ -1,14 +1,11 @@
 package br.ucsal.loja.dao;
 
-import java.io.IOException;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import org.hsqldb.Server;
 import org.hsqldb.persist.HsqlProperties;
-import org.hsqldb.server.ServerAcl.AclFormatException;
 
 /**
  * Application Lifecycle Listener implementation class HSQLBanco
