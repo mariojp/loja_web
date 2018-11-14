@@ -31,7 +31,8 @@ public class ConnectionFactory {
 					+"ESTADO VARCHAR(255) "
 					+ ");");
 
-			
+			//Criar a tabela usuario
+			//Criar a tabela papel
 		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}

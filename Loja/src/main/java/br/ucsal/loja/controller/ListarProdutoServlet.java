@@ -18,7 +18,7 @@ import br.ucsal.loja.model.Produto;
  * Servlet implementation class ListarProdutoServlet
  */
 
-@WebServlet("/ListarProdutosServlet")
+@WebServlet("/admin/ListarProdutosServlet")
 public class ListarProdutoServlet  extends HttpServlet{
 	private static final long serialVersionUID = 1L;
        
@@ -38,7 +38,7 @@ public class ListarProdutoServlet  extends HttpServlet{
 		ProdutoDAO dao =  new ProdutoDAO();
 		List<Produto> produtos  = dao.getLista();
 		request.setAttribute("produtos", produtos);
-		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("ListarProduto.jsp");
+		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("/WEB-INF/ListarProduto.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

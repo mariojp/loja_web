@@ -3,7 +3,6 @@ package br.ucsal.loja.controller;
 import java.io.IOException;
 import java.util.List;
 
-import javax.jws.WebService;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +17,7 @@ import br.ucsal.loja.model.Produto;
  * Servlet implementation class ListarProdutoServlet
  */
 
-@WebServlet(urlPatterns = {"/", "/Index"})
+@WebServlet("/Index")
 public class IndexServlet  extends HttpServlet{
 	private static final long serialVersionUID = 1L;
        
@@ -41,7 +40,6 @@ public class IndexServlet  extends HttpServlet{
 		RequestDispatcher requestDispatcher =   request.getRequestDispatcher("index.jsp");
 		requestDispatcher.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
